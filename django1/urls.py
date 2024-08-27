@@ -23,9 +23,11 @@ urlpatterns = [
 """
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from core.views import index, contato  # Importando as funções index e contato
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls'))
+    path('', index),
+    path('contato', contato),
 ]
